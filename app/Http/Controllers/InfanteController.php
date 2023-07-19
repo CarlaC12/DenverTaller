@@ -58,7 +58,7 @@ class InfanteController extends Controller
         $user = new User();
         $user->name = $request->input('nombre');
         $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('nombre'));
+        $user->password = bcrypt($request->input('12345'));
         $user->save();
         $user->assignRole('Padre');
 

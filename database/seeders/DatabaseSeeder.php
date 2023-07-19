@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AreaSeeder::class);
         $this->call(EdadSeeder::class);
         $this->call(EscalaSeeder::class);
-      //  $this->call(InfanteSeeder::class);
         $this->call(PermissionSeeder::class);
+       $this->call(InfanteSeeder::class);
         $this->call(denverEscalaSeeder::class);
 
 
