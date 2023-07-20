@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="card mb-3" style="max-width: 940px;">
                 <div class="thermometer-container d-flex justify-content-between">
-                 {{-- @foreach ($data as $emocion => $cantidad)
+                 {{ @foreach ($data as $emocion => $cantidad)
                         @if ($cantidad != 0)
                             <div class="thermometer">
                                 <div class="thermometer-icon">
@@ -32,7 +32,7 @@
                                 <div class="thermometer-name">{{ $emocion }}</div>
                             </div>
                         @endif
-                    @endforeach --}}
+                    @endforeach}}
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
        
     </section>
 @endsection
-{{-- @section('styles')
+{{@section('styles')
     <style>
         .thermometer-container {
             display: flex;
@@ -148,4 +148,4 @@
             margin-top: 10px;
         }
     </style>
-@endsection --}}
+@endsection }}
