@@ -17,7 +17,7 @@
     <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
 </head>
 
-<body style="background-image: url('{{ asset('/img/login2.jpg') }}'); background-size: contain; background-position: top center;align-items: center;">
+<body style="background-image: url('{{ asset('/img/login5.jpg') }}'); background-size: contain; background-position: top center;align-items: center;">
 <div id="app">
     <section class="section">
         <div class="container mt-5">

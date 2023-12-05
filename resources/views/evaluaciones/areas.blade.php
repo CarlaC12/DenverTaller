@@ -9,7 +9,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-image: url('{{ asset('img/login2.jpg') }}');
+        background-image: url('{{ asset('img/logo4.jpg') }}');
         background-size: cover;
         background-position: center;
         position: relative;
@@ -161,7 +161,6 @@ var evaluacionId = {{ $evaluaciondenver->id }};
     }
     function finishEvaluation() {
         // Lógica para finalizar la evaluación
-    
         window.location.href = '{{ route('evaluaciones.show', $evaluaciondenver->id) }}';
     }
 </script>

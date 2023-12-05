@@ -15,9 +15,9 @@ class CreatePAccionsTable extends Migration
     {
         Schema::create('p_accions', function (Blueprint $table) {
             $table->id();
-            $table->String('descripcionPA');
+            $table->String('descripcionPA')->nullable();
             $table->date('date');
-
+            $table->String('audio')->nullable();
             $table->unsignedBigInteger('evaluacionId');
             $table->foreign('evaluacionId')->on('evaluaciondenver')->references('id');
 

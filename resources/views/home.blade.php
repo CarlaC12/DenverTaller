@@ -1,4 +1,4 @@
-@extends('dashboard.app')
+@extends('layouts.app')
 
 @section('content')
     <div class="container-fluid py-4">
@@ -8,15 +8,15 @@
                     <div class="card-header p-3 pt-2">
                         <div
                             class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                            <i class="fa fa-users f-left"></i>
+                            <i class="fa fa-users f-left" style="font-size: 4em; float: right;"></i>
                         </div>
 
-                        <div class="text-end pt-1">
-                            <h4 class="mb-0">Usuarios</h4>
-                        </div>
+                        
                     </div>
                     <hr class="dark horizontal my-0">
                     <div class="card-footer p-3">
+                        <h4 class="mb-0" style="text-align: right; color: rgb(236, 55, 206);" >Usuarios</h4>
+
                         @php
                             use Spatie\Permission\Models\Role;
                             $cant_roles = Role::count();
@@ -31,14 +31,14 @@
                     <div class="card-header p-3 pt-2">
                         <div
                             class="icon icon-lg icon-shape bg-gradient-info shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                            <i class="fas fa-file f-left"></i>
+                            <i class="fas fa-file f-left" style="font-size: 4em; float: right;"></i>
                         </div>
-                        <div class="text-end pt-1">
-                            <h4 class="mb-0">Evaluaciones</h4>
-                        </div>
+                        
                     </div>
                     <hr class="dark horizontal my-0">
                     <div class="card-footer p-3">
+                        <h4 class="mb-0" style="text-align: right; color: rgb(236, 55, 206);" >Evaluaciones</h4>
+
                         @php
                             use App\Models\Evaluacion;
                             $cant_blogs = Evaluacion::count();
@@ -53,14 +53,14 @@
                     <div class="card-header p-3 pt-2">
                         <div
                             class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                            <i class="fas fa-people-carry f-left"></i>
+                            <i class="fas fa-people-carry f-left" style="font-size: 4em; float: right;"></i>
+
                         </div>
-                        <div class="text-end pt-1">
-                            <h4 class="mb-0">Personal</h4>
-                        </div>
+                        
                     </div>
                     <hr class="dark horizontal my-0">
                     <div class="card-footer p-3">
+                        <h4 class="mb-0" style="text-align: right; color: rgb(236, 55, 206);" >Personal</h4>
                         @php
                             use App\Models\Personal;
                             $cant_blogs = Personal::count();
@@ -75,15 +75,13 @@
                     <div class="card-header p-3 pt-2">
                         <div
                             class="icon icon-lg icon-shape bg-gradient-primary shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                            <i class="fas fa-child f-left"></i>
+                            <i class="fas fa-child f-right" style="font-size: 4em; float: right;"></i>
                         </div>
-                        <div class="text-end pt-1">
-
-                            <h4 class="mb-0">Infantes</h4>
-                        </div>
+                      
                     </div>
                     <hr class="dark horizontal my-0">
                     <div class="card-footer p-3">
+                        <h4 class="mb-0" style="text-align: right; color: rgb(236, 55, 206);" >Infantes</h4>
                         @php
                         use App\Models\Infante;
                         $cant_blogs = Infante::count();
@@ -146,15 +144,15 @@
                 <div class="card z-index-2 ">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
                         <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
-                            <div class="chart">
+                            <div class="chart" >
                                 <img alt="image" src="{{ asset('img/3.jpg') }}" height="170">
 
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" >
                         <h6 class="mb-0 ">Audición y Lenguaje</h6>
-                        <p><small>La audición y el lenguaje son dos aspectos interrelacionados del desarrollo humano. La
+                        <p ><small>La audición y el lenguaje son dos aspectos interrelacionados del desarrollo humano. La
                                 audición se refiere a la capacidad de percibir y procesar los sonidos, mientras que el
                                 lenguaje implica la habilidad de comprender y comunicarse a través de palabras y estructuras
                                 lingüísticas.</small>

@@ -70,18 +70,18 @@ class PermissionSeeder extends Seeder
         
         
         $user = new User();
-        $user->name = 'Carol Selena';       
+        $user->name = 'admin';       
         $user->email = 'admin@gmail.com';       
-        $user->password = bcrypt('12345');
+        $user->password = bcrypt('admin');
         $user->save();
         $user->assignRole('Superadmin');
         
-        $user = new User();
-        $user->name = 'Daniel Maldonado';
-        $user->email = 'daniel@gmail.com';       
-        $user->password = bcrypt('123123');
-        $user->save();
-        $user->assignRole('Secretari@');
+        // $user = new User();
+        // $user->name = 'Daniel Maldonado';
+        // $user->email = 'daniel@gmail.com';       
+        // $user->password = bcrypt('123123');
+        // $user->save();
+        // $user->assignRole('Secretari@');
 
 
 

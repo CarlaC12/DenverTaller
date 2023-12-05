@@ -1,16 +1,16 @@
-@extends('dashboard.app')
+@extends('layouts.app')
 @section('title')
     Seguimiento
 @endsection
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading">Plan de Acción N° {{ $pAccion->id}} en Seguimiento</h3>
+            <h3 class="page__heading">Plan de Acción N° {{ $pAccion->id }} en Seguimiento</h3>
         </div>
         <div class="section-body">
             <div class="card mb-3" style="max-width: 740px;">
-                <form method="post" action="{{ route('seguimiento.store') }}" novalidate>
-                @csrf
+                <form method="post" action="{{ route('seguimiento.store') }}" novalidate enctype="multipart/form-data">
+                    @csrf
                     <div class="row g-0">
                         <div class=" col-md-4">
                             <div class="card"
@@ -99,10 +99,9 @@
                                         <textarea name="descripcionAL" rows="4" cols="50">
                                    
                                     </textarea>
-
-
                                     </div>
                                 </div>
+
                             </div>
 
 
@@ -118,37 +117,36 @@
                                         <textarea name="descripcionPS" rows="4" cols="50">
                                    
                                     </textarea>
-
-
                                     </div>
                                 </div>
                             </div>
+                           
+                           
+                                               
                         </div>
 
                     </div>
-                    <input type="text" name="pAccionId"  value="{{old('pAccionId', $pAccion->id)}}"  style="display: none;">
+                    <input type="text" name="pAccionId" value="{{ old('pAccionId', $pAccion->id) }}"
+                        style="display: none;">
                     <div class="row"
                         style="margin-top: 15px;
                 
                          margin-left: 20px;
                           margin-right: 20px; ">
-                          <button type="submit"class="btn btn-primary cursor-pointer">
+                        <button type="submit"class="btn btn-primary cursor-pointer">
                             <span>
                                 <i class="fas fa-file-download" style="color: #faf8f5"></i>
-                            </span>Guardar  
-                          </button>
-                        {{-- <div class="d-grid gap-2 col-12 mx-auto">
-                            <a href="" class="btn btn-primary">Guardar</a>
-                        </div> --}}
+                            </span>Guardar
+                        </button>
+
                     </div>
 
 
                 </form>
 
+
+
             </div>
-
-
-        </div>
 
     </section>
 
@@ -171,4 +169,5 @@
         textarea.focus();
         textarea.setSelectionRange(0, 0);
     </script>
+
 @stop

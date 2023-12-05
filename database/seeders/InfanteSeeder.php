@@ -29,13 +29,14 @@ class InfanteSeeder extends Seeder
         $infante->apellidoMaterno = 'Martinez';
         $infante->edad = 1;
         $infante->sexo = 'F';
-        $infante->fechaNacimiento = '2019-06-30';
+        $infante->fechaNacimiento = '2019-02-28';
         $infante->nombreMadre = 'Rosalia Martinez';
         $infante->nombrePadre = 'Juan Carlos Acevedo';
         $infante->telefonoEmergencia = '65248754';
         $infante->sala = '1';
         $infante->userId = $user->id;
         $infante->save();
+        $user=null;
         //////////////////////////////////////////////////
 
         $user = new User();
@@ -51,13 +52,14 @@ class InfanteSeeder extends Seeder
         $infante->apellidoMaterno = 'Martinez';
         $infante->edad = 2;
         $infante->sexo = 'F';
-        $infante->fechaNacimiento = '2021-06-10';
+        $infante->fechaNacimiento = '2021-03-03';
         $infante->nombreMadre = 'Maria Martinez';
         $infante->nombrePadre = 'Marco Vidal';
         $infante->telefonoEmergencia = '65248754';
         $infante->sala = '1';
         $infante->userId = $user->id;
         $infante->save();
+        $user=null;
 ////////////////////////////////////////////////////////////////
         $user = new User();
         $user->name = 'Vannesa Colque';
@@ -72,7 +74,7 @@ class InfanteSeeder extends Seeder
         $infante->apellidoMaterno = 'Colque';
         $infante->edad = 1;
         $infante->sexo = 'F';
-        $infante->fechaNacimiento = '2019-02-30';
+        $infante->fechaNacimiento = '2019-01-01';
         $infante->nombreMadre = 'Rosalia Colque';
         $infante->nombrePadre = 'Juan Carlos Martinez';
         $infante->telefonoEmergencia = '65248754';

@@ -1,4 +1,4 @@
-@extends('dashboard.app')
+@extends('layouts.app')
 @section('title')
     Evaluaciones
 @endsection

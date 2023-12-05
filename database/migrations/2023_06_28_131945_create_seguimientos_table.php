@@ -15,10 +15,11 @@ class CreateSeguimientosTable extends Migration
     {
         Schema::create('seguimientos', function (Blueprint $table) {
             $table->id();
-            $table->String('descripcionMG');
-            $table->String('descripcionMF');
-            $table->String('descripcionAL');
-            $table->String('descripcionPS');
+            $table->String('descripcionMG')->nullable();
+            $table->String('descripcionMF')->nullable();
+            $table->String('descripcionAL')->nullable();
+            $table->String('descripcionPS')->nullable();
+
            
             $table->unsignedBigInteger('pAccionId');
             $table->foreign('pAccionId')->on('p_accions')->references('id');

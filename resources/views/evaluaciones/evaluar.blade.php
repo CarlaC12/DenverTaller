@@ -15,7 +15,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('{{ asset('img/login2.jpg') }}');
+            background-image: url('{{ asset('img/login5.jpg') }}');
             background-size: cover;
             background-position: center;
             margin-bottom: 30px; /* Agregado espacio inferior */
@@ -221,11 +221,11 @@
 <script src="https://sdk.amazonaws.com/js/aws-sdk-2.965.0.min.js"></script>
 <script>
   var emotionResults = {!! json_encode($emotionResults) !!};
-  var bucketName = 'denver-emotion';
+  var bucketName = 'sw-audio';
  var captureInterval; 
   AWS.config.update({
-    accessKeyId: 'AKIAT5WDOTWE7UDWPY3G',
-    secretAccessKey: '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',
+    accessKeyId: 'AKIATOXLZIW2URTSBRQB',
+    secretAccessKey: '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',
     region: 'us-east-1'
   });
 
@@ -266,7 +266,7 @@
             }
           });
         }, 'image/jpeg');
-      }, 2000); // Capturar y enviar cada 2 segundos
+      }, 6000); // Capturar y enviar cada 6 segundos
 
       // Detener la captura después de cierto tiempo (opcional)
       var stopCaptureTimeout = setTimeout(function () {
@@ -278,7 +278,7 @@
     });
 
   function sendImageUrlToEndpoint(imageUrl) {
-  fetch('http://emocion.online/predict_emotion', {
+  fetch('http://ec2-54-175-236-209.compute-1.amazonaws.com:5000/predict_emotion', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

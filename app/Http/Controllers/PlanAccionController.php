@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\EvaluacionDenver;
 use App\Models\PAccion;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 class PlanAccionController extends Controller
 {
     /**
@@ -43,15 +44,25 @@ class PlanAccionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'descripcionPA' => 'required',
             'date' => 'required',
             'evaluacionId' => 'required',     
         ]);
+     
         $paccion = new PAccion();
         $paccion->descripcionPA = $request->input('descripcionPA');
         $paccion->date = $request->input('date');
+        
+        
+        if ($request->hasFile('audio')) {
+            $nombre = time() . '.' . $request->file('audio')->getClientOriginalExtension();
+            $ruta = storage_path('app/public/audio/' . $nombre);
+            $request->file('audio')->storeAs('public/audio', $nombre);
+            $paccion->audio = $nombre;
+        } else {
+            $nombre = null;
+        }
+        
         $paccion->evaluacionId = $request->input('evaluacionId');
-      
         $paccion->save();
        
           

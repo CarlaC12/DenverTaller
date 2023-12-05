@@ -1,4 +1,4 @@
-@extends('dashboard.app')
+@extends('layouts.app')
 @section('title')
     PlanAcción
 @endsection
@@ -12,7 +12,7 @@
                 <img src="{{ asset('img/psicotricimidad.png') }}" class="card-img-top" alt="..." width="400"
                     height="300">
                 <div class="card-body">
-                    <form method="post" action="{{route('planAccion.store')}}" novalidate >
+                    <form method="post" action="{{route('planAccion.store')}}" novalidate  enctype="multipart/form-data" >
                         @csrf
                    
                         <div class="row">
@@ -25,21 +25,20 @@
                                     <label for="">Plan De Acción Evaluación N° {{$evaluacion->id}}</label>
                                     <textarea name="descripcionPA" rows="4" cols="50">                
                                     </textarea>
-
-
                                 </div>
                             </div>
                             <input type="text" id="miInput"name="evaluacionId"  value="{{old('evaluacionId', $evaluacion->id)}}"  style="display: none;">
-
                         </div>
+
                         <div class="row">
                             <label class="form-label">Fecha:</label>
                             <input type="date" class="form-control " name="date"
                                 style=" margin-top: 0px; margin-bottom: 8px; height: 33px; background-color: rgb(236, 232, 232); color: rgb(3, 3, 3);">
-
-
+                                <hr>
+                                {{-- <h3>Audio a Procesar</h3> --}}
+                                <label for="audio_file">Seleccionar archivo de audio:</label>
+                                <input type="file" name="audio"  accept=".mp3, .wav" style="margin-bottom: 10px" > 
                            <button type="submit" class="btn btn-primary cursor-pointer">
-                            
                                 <span>
                                     <i class="fas fa-file-download" style="color: #faf8f5"></i>
                                 </span>Guardar
