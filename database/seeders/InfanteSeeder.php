@@ -39,13 +39,14 @@ class InfanteSeeder extends Seeder
         $user=null;
         //////////////////////////////////////////////////
 
-        $user = new User();
-        $user->name = 'Daniel Vidal';
-        $user->email = 'daniel@gmail.com';       
-        $user->password = bcrypt('12345');
-        $user->save();
-        $user->assignRole('Padre');
+        $user1 = User::create([
+            'name' => 'Daniel Vidal',
+            'email' => 'daniel@gmail.com',
+            'password' => bcrypt('12345'),
+        ]);
 
+        $user1->assignRole('Padre');
+        
         $infante = new Infante();
         $infante->nombre = 'Daniel';
         $infante->apellidoPaterno = 'Vidal';
